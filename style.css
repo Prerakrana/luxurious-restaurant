@@ -1,0 +1,604 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Changed from #f0f2f5 to a softer, slightly darker background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FAF8F0; /* Creamy White/Off-White for feel-good background */
+    color: #333; /* Kept dark for contrast on the light background */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Primary Button - Now Muted Gold */
+.btn-primary {
+    display: inline-block;
+    /* Updated gradient to use Muted Gold tones */
+    background: linear-gradient(135deg, #C8A651, #D9B872); 
+    color: #0C1C2A; /* Dark text on light gold button for high contrast */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    /* Updated shadow color for sophistication */
+    box-shadow: 0 4px 15px rgba(200, 166, 81, 0.4); 
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #D9B872, #C8A651);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200, 166, 81, 0.6);
+}
+
+/* Header Styles */
+header {
+    background: #0C1C2A; /* Deep Navy Background for a premium feel */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Darker, richer shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    color: #C8A651; /* Muted Gold for the 'Foodie' logo */
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FAF8F0; /* Creamy White text that POPS against the Navy header */
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #C8A651; /* Muted Gold on hover */
+    background-color: rgba(200, 166, 81, 0.1); 
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #C8A651; /* Muted Gold underline */
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+    color: #C8A651; /* Muted Gold cart icon */
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #006655; /* Deep Emerald for a unique alert accent */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero Section - The Big Transformation */
+.hero {
+    /* Replaced previous blue overlay with Deep Navy for richness */
+    background: linear-gradient(rgba(12, 28, 42, 0.7), rgba(12, 28, 42, 0.7)), url('img/food-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FAF8F0; /* Creamy White text that POPS */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #C8A651; /* Make the main message Muted Gold to stand out */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #A0AEC0; /* Soft Gray for secondary text */
+}
+
+/* Categories Section */
+.categories {
+    padding: 80px 0;
+}
+
+.categories h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #0C1C2A; /* Headings are Deep Navy */
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #C8A651; /* Category titles are Muted Gold */
+}
+
+/* Featured Items Section */
+.featured {
+    padding: 80px 0;
+    /* Changed light background for more luxury */
+    background-color: #F0F0E6; 
+}
+
+.featured h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #0C1C2A;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.food-card {
+    background: #FAF8F0; /* Creamy White card background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0C1C2A; /* Deep Navy for item titles */
+}
+
+.food-info p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #006655; /* Deep Emerald for the price to differentiate */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 10px;
+    /* Updated gradient to Muted Gold tones */
+    background: linear-gradient(135deg, #C8A651, #D9B872); 
+    color: #0C1C2A; /* Dark text on gold button for clarity */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+    background: linear-gradient(135deg, #D9B872, #C8A651);
+}
+
+/* Cart Modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Slightly darker modal background */
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-header {
+    background: #0C1C2A; /* Deep Navy header */
+    color: #FAF8F0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #C8A651; /* Muted Gold close button */
+}
+
+.cart-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-info h4 {
+    margin-bottom: 5px;
+}
+
+.item-price {
+    color: #006655; /* Deep Emerald for price */
+    font-weight: bold;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    background: #0C1C2A; /* Deep Navy button */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quantity {
+    margin: 0 10px;
+}
+
+.remove-item {
+    background: #006655; /* Changed from red to Deep Emerald */
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.cart-total {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    /* Inherits btn-primary styles */
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 30px 0;
+}
+
+/* Bill Preview Modal */
+#billPreview {
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    background: #F0F0E6; /* Light, soft background */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background: #0C1C2A; /* Deep Navy Footer */
+    color: #FAF8F0;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #C8A651; /* Muted Gold headings */
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #A0AEC0; /* Soft Gray links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #C8A651; /* Muted Gold on hover */
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .categories h2,
+    .featured h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Menu Page Specific Styles */
+.menu-page {
+    padding: 50px 0;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.menu-header h1 {
+    font-size: 2.5rem;
+    color: #0C1C2A; /* Deep Navy heading */
+    margin-bottom: 20px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #C8A651; /* Muted Gold border */
+    color: #0C1C2A; /* Deep Navy text */
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #C8A651; /* Muted Gold fill on active/hover */
+    color: #0C1C2A; /* Dark Navy text on gold */
+}
+
+/* About Page Styles */
+.about-page {
+    padding: 50px 0;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    color: #0C1C2A;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Page Styles */
+.contact-page {
+    padding: 50px 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    color: #0C1C2A;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #A0AEC0; /* Soft Gray border */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
